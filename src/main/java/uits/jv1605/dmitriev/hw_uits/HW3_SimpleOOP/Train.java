@@ -6,6 +6,7 @@
 package uits.jv1605.dmitriev.hw_uits.HW3_SimpleOOP;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  * @author 911
@@ -60,6 +61,37 @@ public class Train {
         Train train6=new Train("Odessa", 471, "06-30",0, 300,48);
             trainList.add(train6);
             
+        System.out.print("Введите интересующий пункт назначения: ");
+        Scanner in=new Scanner(System.in);
+        String taskDestanition=in.nextLine();
+        for (Train iterator : trainList){
+            if (iterator.destination.equalsIgnoreCase(taskDestanition)){
+                System.out.println("Подходит: " + iterator.toString());
+            }
+        }
+        System.out.println("///////////////////////////////////////////////////////////////");
+        System.out.print("Введите интересующее  время: ");
+        Scanner in2=new Scanner(System.in);
+        String taskTime=in2.nextLine();
+        for (Train iterator : trainList){
+            int hour=Integer.parseInt(iterator.departureTime.substring(0,1));
+            int minutes=Integer.parseInt(iterator.departureTime.substring(3,4));
+            int hourTask=Integer.parseInt(taskTime.substring(0,1));
+            int minutesTask=Integer.parseInt(taskTime.substring(3,4));
+            if ((hour>hourTask)|(hour==hourTask)&(minutes>=minutesTask)){
+                if (iterator.destination.equalsIgnoreCase(taskDestanition)){
+                    System.out.println("Подходит еще и по времени: " + iterator.toString());}
+            }
+        }
+         System.out.println("///////////////////////////////////////////////////////////////");
+        System.out.print("Введите интересующий пункт назначения: ");
+        Scanner in3=new Scanner(System.in);
+        String taskDestanition2=in3.nextLine();
+        for (Train iterator : trainList){
+            if ((iterator.destination.equalsIgnoreCase(taskDestanition2))&(iterator.cheapSeats!=0)){
+                System.out.println("Подходит  и есть общие места: " + iterator.toString());
+            }
+        }
         
      }
      
