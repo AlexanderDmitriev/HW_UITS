@@ -3,6 +3,10 @@
  */
 package uits.jv1605.dmitriev.hw_uits.HW3_OOP;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Scanner;
+
 /**
  * @author 911
  */
@@ -59,6 +63,45 @@ public class Taxi implements Comparable <Taxi>{
                 this.fuelConsumption=18; // потребление топлива
                 this.speed=32; }
         }
-        public static void main(String args[]){}
+        public static void main(String args[]){
+            Taxi t1=new Taxi();
+            Taxi.LadaCalina tax1=t1.new LadaCalina(14,4148);
+            Taxi t2=new Taxi();
+            Taxi.LadaDaNuNa tax2=t2.new LadaDaNuNa(8,4007);
+            Taxi t3=new Taxi();
+            Taxi.LadaDaNuNa tax3=t3.new LadaDaNuNa(8.5,1381);
+            Taxi t4=new Taxi();
+            Taxi.FerrariFXX tax4=t4.new FerrariFXX(100,0001);
+            Taxi t5=new Taxi();
+            Taxi.WindowsAutoMobile tax5=t5.new WindowsAutoMobile(50,6060);
+            ArrayList <Taxi> kamikadzeTaxi=new ArrayList <Taxi>();
+            kamikadzeTaxi.add(tax1);
+            kamikadzeTaxi.add(tax2);
+            kamikadzeTaxi.add(tax3);
+            kamikadzeTaxi.add(tax4);
+            kamikadzeTaxi.add(tax5);
+            double cost=0;;
+                for (Taxi iterator : kamikadzeTaxi){
+                     cost+=iterator.price;
+            }
+                System.out.println("Ваш таксопарк стоит " + cost + "00 000 USD");
+                
+             Collections.sort(kamikadzeTaxi);
+          for (Taxi i:kamikadzeTaxi){
+                System.out.println(i.type + " под  номером  " + i.number + " и  потреблением  " + i.fuelConsumption);}
+          
+          System.out.print("Введите минимальную скорость ");
+            Scanner in=new Scanner(System.in);
+            double taskStart=in.nextDouble();
+            System.out.print("Введите максимальную  скорость ");
+            Scanner in2=new Scanner(System.in);
+            double taskEnd=in.nextDouble();
+            System.out.println("В вашем диапазоне подходят: ");
+           for (Taxi i:kamikadzeTaxi){
+                if (i.sortByNumber(taskStart, taskEnd)){System.out.println(i.type + " под  номером " + i.number + " , скорость " + i.speed);}}
+          
+        
+        
+        }
     
 }
