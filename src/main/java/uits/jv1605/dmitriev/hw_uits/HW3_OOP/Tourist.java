@@ -4,6 +4,11 @@
 выбора. Учитывать возможность выбора транспорта, питания и числа дней. Реализовать выбор и сортировку путевок.
  */
 package uits.jv1605.dmitriev.hw_uits.HW3_OOP;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Scanner;
+
 /**
  * @author 911
  */
@@ -39,10 +44,90 @@ public class Tourist implements Comparable <Tourist>{
             } 
         
         public class WoodRest extends Tourist{
-        WoodRest(int food, int days, Transport logistic){
+        WoodRest(int food, int days, Transport logistic, double transportPay){
             this.type=" Отдых в лесу ";     
             this.food=food;
             this.days=days;
-            this.price=100;}
+            this.price=100;
+            this.logistic=logistic;
+            this.transportPay=transportPay;
+            this.cost=(5*food+price)*days+transportPay;
+            }
         }
+        public class Trip extends Tourist{
+        Trip(int food, int days, Transport logistic, double transportPay){
+            this.type=" Экскурсия ";     
+            this.food=food;
+            this.days=days;
+            this.price=120;
+            this.logistic=logistic;
+            this.transportPay=transportPay;
+            this.cost=(5*food+price)*days+transportPay;
+            }
+        }
+        public class Healing extends Tourist{
+        Healing(int food, int days, Transport logistic, double transportPay){
+            this.type=" Лечение ";     
+            this.food=food;
+            this.days=days;
+            this.price=90;
+            this.logistic=logistic;
+            this.transportPay=transportPay;
+            this.cost=(5*food+price)*days+transportPay;
+            }
+        }
+        public class Shopping extends Tourist{
+        Shopping(int food, int days, Transport logistic, double transportPay){
+            this.type=" Прогулка по магазинам ";     
+            this.food=food;
+            this.days=days;
+            this.price=250;
+            this.logistic=logistic;
+            this.transportPay=transportPay;
+            this.cost=(5*food+price)*days+transportPay;
+            }
+        }
+        public class Cruise extends Tourist{
+        Cruise(int food, int days, Transport logistic, double transportPay){
+            this.type=" Путешествие ";     
+            this.food=food;
+            this.days=days;
+            this.price=500;
+            this.logistic=logistic;
+            this.transportPay=transportPay;
+            this.cost=(5*food+price)*days+transportPay;
+            }
+        }
+        
+        public static void main(String args[]){
+            Tourist t=new Tourist();
+            Tourist.WoodRest rest1=t.new WoodRest(3,3,Transport.Walk,0);
+            Tourist.Trip rest2=t.new Trip(1,1,Transport.Train,3);
+            Tourist.Healing rest3=t.new Healing(4,2,Transport.Car,5);
+            Tourist.Shopping rest4=t.new Shopping(0,1,Transport.Horse,4);
+            Tourist.Cruise rest5=t.new Cruise(4,7,Transport.Boat,6);
+            Tourist.Healing rest6=t.new Healing(4,2,Transport.Plane,10);
+            ArrayList <Tourist> tours=new ArrayList <Tourist>();
+            tours.add(rest1);
+            tours.add(rest2);
+            tours.add(rest3);
+            tours.add(rest4);
+            tours.add(rest5);
+            tours.add(rest6);
+            Collections.sort(tours);
+            for (Tourist i:tours){
+                System.out.println("Вид отдыха: " + i.type + " с затратами "+ i.cost + " добраться можно " +  i.logistic);}
+            System.out.print("Введите сумму, которую вы готовы потратить ");
+            Scanner in=new Scanner(System.in);
+            double task=in.nextDouble();
+            for (Tourist iterator : tours){
+                 if (task>iterator.cost){
+                System.out.println("Вам подходит: " + iterator.type + " , затраты составят " +  iterator.cost);}    
+            }
+            
+        
+        
+        
+        }  
+        
 }

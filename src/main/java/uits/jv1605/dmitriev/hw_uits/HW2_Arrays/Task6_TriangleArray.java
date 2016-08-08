@@ -1,3 +1,10 @@
+/*  Используя циклические конструкции и массивы создать “рваный массив”
+треугольной формы, реализовать вывод данного массива в виде треугольника в
+консоль. Реализовать методы, отражающие данный “треугольник”
+● по горизонтали
+● по вертикали
+● по горизонтали и вертикали одновременно
+*/
 package uits.jv1605.dmitriev.hw_uits.HW2_Arrays;
 public class Task6_TriangleArray {
     public static void triangleArray(){
@@ -35,7 +42,7 @@ public class Task6_TriangleArray {
          String [][]xInvVer=new String[x.length][x.length];
         for (int i=0; i<x.length; i++){
             for (int j=0; j<x.length; j++){
-                xInvVer[i][j]=" "; }}
+                xInvVer[i][j]=null; }}
         for (int i=0; i<x.length; i++){
             for (int j=0; j<x[i].length; j++){
                 xInvVer[i][j]=x[i][j]; }}
