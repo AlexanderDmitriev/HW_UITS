@@ -53,16 +53,12 @@ public class Train2 implements Comparable <Train2>{
         }
         
         public static void main(String args[]){
-           Train2 w1=new Train2();
-           Train2.ChipWagon wag1=w1.new ChipWagon(100,350,1);
-           Train2 w2=new Train2();
-           Train2.ReservedWagon wag2=w2.new ReservedWagon(60,400,2);
-           Train2 w3=new Train2();
-           Train2.ReservedWagon wag3=w3.new ReservedWagon(55,450,3);
-           Train2 w4=new Train2();
-           Train2.ReservedWagon wag4=w4.new ReservedWagon(69,400,4);
-           Train2 w5=new Train2();
-           Train2.LuxWagon wag5=w5.new LuxWagon(40,500,5);
+           Train2 w=new Train2();
+           Train2.ChipWagon wag1=w.new ChipWagon(100,350,1);
+           Train2.ReservedWagon wag2=w.new ReservedWagon(60,400,2);
+           Train2.ReservedWagon wag3=w.new ReservedWagon(55,450,3);
+           Train2.ReservedWagon wag4=w.new ReservedWagon(69,400,4);
+           Train2.LuxWagon wag5=w.new LuxWagon(40,500,5);
            ArrayList <Train2> railwayTrain=new ArrayList <Train2>();
            railwayTrain.add(wag1);
            railwayTrain.add(wag2);

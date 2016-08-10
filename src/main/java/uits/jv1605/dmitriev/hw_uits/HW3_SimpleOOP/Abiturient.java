@@ -99,20 +99,21 @@ public class Abiturient extends Person {
         
         tempArray=(abiturientsList.toArray(new Abiturient [abiturientsList.size()]));
         for (int j=0;j<tempArray.length;j++){
-        for (int i=0; i<tempArray.length-j-1;i++){
-            if(middle(tempArray[i].markArray)<=middle(tempArray[i+1].markArray)){
-                Abiturient temp=tempArray[i+1];
-                tempArray[i+1]=tempArray[i];
-                tempArray[i]=temp;}}
+            for (int i=0; i<tempArray.length-j-1;i++){
+                if(middle(tempArray[i].markArray)<=middle(tempArray[i+1].markArray)){
+                    Abiturient temp=tempArray[i+1];
+                    tempArray[i+1]=tempArray[i];
+                    tempArray[i]=temp;}}
         }
 
         if (howAbiturient<tempArray.length){
-        for (int i=0; i<howAbiturient; i++){
-            System.out.println("Подходит " + tempArray[i].name + " со  средним баллом " + middle(tempArray[i].markArray) );}}
+            for (int i=0; i<howAbiturient; i++){
+                System.out.println("Подходит " + tempArray[i].name + " со  средним баллом " + middle(tempArray[i].markArray) );}
+        }
         System.out.println("Список непрошедших: ");
         if (howAbiturient<tempArray.length){
-        for (int i=howAbiturient; i<tempArray.length; i++){
-            System.out.println("Не проходит " + tempArray[i].name + " со  средним баллом " + middle(tempArray[i].markArray) );}}
+            for (int i=howAbiturient; i<tempArray.length; i++){
+              System.out.println("Не проходит " + tempArray[i].name + " со  средним баллом " + middle(tempArray[i].markArray) );}}
     }
     
 }

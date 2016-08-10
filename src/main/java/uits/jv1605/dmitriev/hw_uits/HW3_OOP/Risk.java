@@ -57,14 +57,11 @@ public class Risk implements Comparable <Risk>{
                 this.chance=chance; }}
      
      public static void main(String args[]){
-         Risk r1=new Risk();
-         Risk.LifeInsurance er1=r1.new LifeInsurance(12000,400,0.001);
-         Risk r2=new Risk();
-         Risk.HealthInsurance er2=r2.new HealthInsurance(5000,100,0.01);
-         Risk r3=new Risk();
-         Risk.EstateInsurance er3=r3.new EstateInsurance(7500,120,0.015);
-         Risk r4=new Risk();
-         Risk.AssInsurance er4=r4.new AssInsurance(5,25,0.1);
+         Risk r=new Risk();
+         Risk.LifeInsurance er1=r.new LifeInsurance(12000,400,0.001);
+         Risk.HealthInsurance er2=r.new HealthInsurance(5000,100,0.01);
+         Risk.EstateInsurance er3=r.new EstateInsurance(7500,120,0.015);
+         Risk.AssInsurance er4=r.new AssInsurance(5,25,0.1);
          ArrayList <Risk> insurance=new ArrayList <Risk>();
             insurance.add(er1);
             insurance.add(er2);

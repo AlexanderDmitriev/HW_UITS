@@ -48,14 +48,11 @@ public class Moto implements Comparable <Moto>{
             this.weigth=weigth;}
         }
        public static void main(String args[]){
-           Moto m1=new Moto();
-           Moto.Jacket mot1=m1.new Jacket(1500,1.5);
-           Moto m2=new Moto();
-           Moto.Gloves mot2=m2.new Gloves(300,0.3);
-           Moto m3=new Moto();
-           Moto.Jeans mot3=m3.new Jeans(1500,0.5);
-           Moto m4=new Moto();
-           Moto.Helmet mot4=m4.new Helmet(4000,1);
+           Moto m=new Moto();
+           Moto.Jacket mot1=m.new Jacket(1500,1.5);
+           Moto.Gloves mot2=m.new Gloves(300,0.3);
+           Moto.Jeans mot3=m.new Jeans(1500,0.5);
+           Moto.Helmet mot4=m.new Helmet(4000,1);
            ArrayList <Moto> biker=new ArrayList <Moto>();
            biker.add(mot1);
            biker.add(mot2);

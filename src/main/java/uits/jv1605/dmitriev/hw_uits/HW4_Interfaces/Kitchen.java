@@ -7,74 +7,56 @@ package uits.jv1605.dmitriev.hw_uits.HW4_Interfaces;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import uits.jv1605.dmitriev.hw_uits.HW4_Interfaces.Fruit.Apple;
-import uits.jv1605.dmitriev.hw_uits.HW4_Interfaces.Fruit.Banana;
-import uits.jv1605.dmitriev.hw_uits.HW4_Interfaces.Fruit.Orange;
-import uits.jv1605.dmitriev.hw_uits.HW4_Interfaces.Fruit.Pear;
-import uits.jv1605.dmitriev.hw_uits.HW4_Interfaces.Vegetable.Carrot;
-import uits.jv1605.dmitriev.hw_uits.HW4_Interfaces.Vegetable.Celery;
-import uits.jv1605.dmitriev.hw_uits.HW4_Interfaces.Vegetable.Onion;
-import uits.jv1605.dmitriev.hw_uits.HW4_Interfaces.Vegetable.Potato;
 
 
 /**@author 911  */
-public class Kitchen {
+public class Kitchen extends KitchenMachine {
 
-
-
-    class Distribution extends Basket{
-    public Collection <Plant> fillTheBasket(Collection <Plant> e){ //Метод, наполняющий корзину
-        Collection <Plant> list=new ArrayList <Plant>();
-        for(Plant iterator : e){
-            if (!iterator.condition){throw new IllegalArgumentException(" Вы загрузили некачественный продукт");}
-            put(list,iterator);
-            System.out.print("Корзина на данный момент весит "  + getWeigth(list) );
-            }
-        return list;
-    }
-    public Collection <Plant> fillTheBasket(Collection <Plant> list, Plant e){ //Метод, наполняющий корзину
-       // Collection <Plant> list=new ArrayList <Plant>();
-            if (!e.condition){throw new IllegalArgumentException(" Вы загрузили некачественный продукт");}
-            put(list,e);
-            System.out.print("Корзина на данный момент весит "  + getWeigth(list) );
-            return list;
-        }
-    }
-    class Processing extends KitchenMachine{
-        public Collection <Plant> machine(Collection <Plant> e){  // Метод, обрабатывающий продукты
+    public  Collection <Plant> machine(Collection <Plant> e){  // Метод, обрабатывающий продукты
             for(Plant iterator : e){
-                if (!iterator.peelling){System.out.print("Корзина после очистки весит "  + peellItem(iterator));}  
+                if (!iterator.peelling){peellItem(iterator);}  
         }
-            System.out.print("Корзина нарезки фруктов весит "  + sliceAll(e));
-            System.out.print("Корзина нарезки овощей весит "  + cutAll(e));
+            System.out.println(getWeigth(e));
+            System.out.println("Корзина нарезки фруктов весит "  + sliceAll(e));
+            System.out.println("Корзина нарезки овощей весит "  + cutAll(e));
             return e;
      }
         
-        public Plant machine(Plant e){  // Метод, обрабатывающий продукты
+     public Plant machine(Plant e){  // Метод, обрабатывающий продукты
                 if (!e.peelling){System.out.print("Корзина после очистки весит "  + peellItem(e));}  
         
             System.out.print("Корзина нарезки фруктов весит "  + slice(e));
             System.out.print("Корзина нарезки овощей весит "  + cut(e));
             return e;
-     }
-    }
+     }   
+        
     
-    
+    //(double weigth, String color, boolean ripeness, boolean condition, boolean peelling)
     public static void main(String args[]){
-        Apple redApple=new Fruit().new Apple();
-        Pear someFruit=new Fruit().new Pear();
-        Banana bananas=new Fruit().new Banana();
-        Orange someOrange=new Fruit().new Orange();
-        Potato veg1=new Vegetable().new Potato();
-        Carrot veg2=new Vegetable().new Carrot();
-        Celery veg3=new Vegetable().new Celery();
-        Onion veg4=new Vegetable().new Onion();
-        ArrayList <Plant> coll=new ArrayList <Plant>();
+        Apple redApple=new Apple(1,"Red",false,true,true);
+        Pear someFruit=new Pear(0.5, "Yellow",false,true,false);
+        Banana bananas=new Banana(0.5,"Yellow",false,true,false);
+        Orange someOrange=new Orange(0.6,"Orange",false,true,false);
+        Potato veg1=new Potato(0.7, "Grey",true,true,true);
+        Carrot veg2=new Carrot(0.4,"Red",false,true,false);
+        Celery veg3=new Celery(0.7,"White",false,true,false);
+        Onion veg4=new Onion(0.6, "White",false,true,false);
+        Collection <Plant> coll=new ArrayList <Plant>();
         coll.add(redApple);
         coll.add(someFruit);
         coll.add(bananas);
         coll.add(someOrange);
-        //coll=fillTheBasket(coll,redApple);  !!! Error
+        coll=fillTheBasket(coll,redApple);
+        Collection <Plant> coll2=new ArrayList <Plant>();
+        coll2.add(someFruit);
+        coll2.add(bananas);
+        coll2.add(someOrange);
+        coll=fillTheBasket(coll,coll2);
+        double startWeigth=getWeigth(coll);
+        Kitchen x=new Kitchen();
+        coll=x.machine(coll);
+        System.out.println("Потеря веса = " + (startWeigth-getWeigth(coll)));
+
     }
 
 }

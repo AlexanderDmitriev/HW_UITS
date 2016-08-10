@@ -74,16 +74,12 @@ public class Coffee implements Comparable <Coffee> {
             double weigth=0;
             double pay=0;
             //(Sost state, double price, double packageQuantity, int howPackage, int quality)
-         Coffee c1=new Coffee();
-         Coffee.Arabica cof1=c1.new Arabica(Sost.Bean,5,5,5,5);
-          Coffee c2=new Coffee();
-         Coffee.Robusta cof2=c2.new Robusta(Sost.InstantJars,3,4,5,4);
-          Coffee c3=new Coffee();
-         Coffee.CapeAlamid cof3=c3.new CapeAlamid(Sost.Ground,130,5,1,10);
-          Coffee c4=new Coffee();
-         Coffee.Arabica cof4=c4.new Arabica(Sost.InstantJars,4,3,5,5);
-          Coffee c5=new Coffee();
-         Coffee.Arabica cof5=c5.new Arabica(Sost.InstantBags,2,1,20,2);
+         Coffee c=new Coffee();
+         Coffee.Arabica cof1=c.new Arabica(Sost.Bean,5,5,5,5);
+         Coffee.Robusta cof2=c.new Robusta(Sost.InstantJars,3,4,5,4);
+         Coffee.CapeAlamid cof3=c.new CapeAlamid(Sost.Ground,130,5,1,10);
+         Coffee.Arabica cof4=c.new Arabica(Sost.InstantJars,4,3,5,5);
+         Coffee.Arabica cof5=c.new Arabica(Sost.InstantBags,2,1,20,2);
          ArrayList <Coffee> wagon=new ArrayList <Coffee>();
          wagon.add(cof1);
          wagon.add(cof2);

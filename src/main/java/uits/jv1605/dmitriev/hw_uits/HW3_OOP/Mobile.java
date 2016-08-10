@@ -53,12 +53,10 @@ public class Mobile implements Comparable <Mobile> {
         }
      
      public static void main(String args[]){
-         Mobile m1=new Mobile();
-         Mobile.studentsTariff tar1=m1.new studentsTariff(12000);
-         Mobile m2=new Mobile();
-         Mobile.standartTariff tar2=m2.new standartTariff(50000);
-         Mobile m3=new Mobile();
-         Mobile.unlimitedTariff tar3=m3.new unlimitedTariff(45000);
+         Mobile m=new Mobile();
+         Mobile.studentsTariff tar1=m.new studentsTariff(12000);
+         Mobile.standartTariff tar2=m.new standartTariff(50000);
+         Mobile.unlimitedTariff tar3=m.new unlimitedTariff(45000);
          ArrayList <Mobile> MTC=new ArrayList <Mobile>();
             MTC.add(tar1);
             MTC.add(tar2);

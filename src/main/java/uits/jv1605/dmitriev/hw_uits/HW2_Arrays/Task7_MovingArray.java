@@ -1,3 +1,11 @@
+/*  Реализовать приложение, которое производит операции циклического сдвига
+над прямоугольным массивом (матрицей). Организовать методы, которые позволяют
+произвести сдвиг:
+● на n позиций влево
+● на n позиций вправо
+● на n позиций вверх
+● на n позиций вниз
+*/
 package uits.jv1605.dmitriev.hw_uits.HW2_Arrays;
 public class Task7_MovingArray {
     public static void arr(int [][]a, int n){
@@ -14,8 +22,7 @@ public class Task7_MovingArray {
        }
       for (int i=0 ;i<a.length; i++ ){
             System.arraycopy(aTemp2[i], 0, a[i], 0, n-1);
-            } 
-
+            }
     for (int i=0 ;i<a.length; i++ ){
             for (int j=0; j<a[i].length-1; j++){
                   a[i][j+n-1]=aTemp[i][j];
@@ -25,9 +32,12 @@ public class Task7_MovingArray {
             System.out.println(java.util.Arrays.toString(arrayIterator));
         }
         System.out.println();
-     
+    
+    
     }
     public static void main(String args[]){
         int [][] array={{1,2,3},{4,5,6},{7,8,9}};
-        arr(array,2);}
+        arr(array,2);
+
+    }
 }

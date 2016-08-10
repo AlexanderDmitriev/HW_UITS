@@ -22,34 +22,12 @@ abstract class Plant implements Peellable{
     boolean condition; //Кондиция - хороший/негодный
     boolean peelling; // Очищен ли продукт?
     String type;
-    //abstract void peel(Plant obj);
-}
-
- class Fruit extends Plant{
-    @Override
-    public void peel() {
-        this.weigth=weigth*0.98;
-        this.peelling=true;
+    
+    Plant(double weigth, String color, boolean ripeness, boolean condition, boolean peelling){
+        this.weigth=weigth;
+        this.color=color;
+        this.ripeness=ripeness;
+        this.condition=condition;
+        this.peelling=peelling;
     }
-    
-    
-    public class Apple extends Fruit{String type="Яблоко";}
-    public class Pear extends Fruit{String type="Груша";}
-    public class Banana extends Fruit{String type="Банан";}
-    public class Orange extends Fruit{String type="Апельсин";}
-    
-    
-}
-
- class Vegetable extends Plant {
-    @Override
-    public void peel() {
-        this.weigth=weigth*0.95;
-        this.peelling=true;
-    }
-    
-    public class Potato extends Vegetable{String type="Картофель";}
-    public class Carrot extends Vegetable{String type="Морковь";}
-    public class Celery extends Vegetable{String type="Сельдерей";}
-    public class Onion extends Vegetable{String type="Лук репчатый";}
 }

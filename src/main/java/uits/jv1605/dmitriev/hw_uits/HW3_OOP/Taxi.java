@@ -64,16 +64,12 @@ public class Taxi implements Comparable <Taxi>{
                 this.speed=32; }
         }
         public static void main(String args[]){
-            Taxi t1=new Taxi();
-            Taxi.LadaCalina tax1=t1.new LadaCalina(14,4148);
-            Taxi t2=new Taxi();
-            Taxi.LadaDaNuNa tax2=t2.new LadaDaNuNa(8,4007);
-            Taxi t3=new Taxi();
-            Taxi.LadaDaNuNa tax3=t3.new LadaDaNuNa(8.5,1381);
-            Taxi t4=new Taxi();
-            Taxi.FerrariFXX tax4=t4.new FerrariFXX(100,0001);
-            Taxi t5=new Taxi();
-            Taxi.WindowsAutoMobile tax5=t5.new WindowsAutoMobile(50,6060);
+            Taxi t=new Taxi();
+            Taxi.LadaCalina tax1=t.new LadaCalina(14,4148);
+            Taxi.LadaDaNuNa tax2=t.new LadaDaNuNa(8,4007);
+            Taxi.LadaDaNuNa tax3=t.new LadaDaNuNa(8.5,1381);
+            Taxi.FerrariFXX tax4=t.new FerrariFXX(100,0001);
+            Taxi.WindowsAutoMobile tax5=t.new WindowsAutoMobile(50,6060);
             ArrayList <Taxi> kamikadzeTaxi=new ArrayList <Taxi>();
             kamikadzeTaxi.add(tax1);
             kamikadzeTaxi.add(tax2);

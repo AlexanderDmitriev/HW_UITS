@@ -69,16 +69,12 @@ public class Airlines implements Comparable <Airlines>{
            
            
            public static void main(String args[]){
-               Airlines a1=new Airlines();
-               Airlines.AirBus330 plane1=a1.new AirBus330(100,350,123);
-               Airlines a2=new Airlines();
-               Airlines.AirBus330 plane2=a2.new AirBus330(120,340,244);
-               Airlines a3=new Airlines();
-               Airlines.Boeing737 plane3=a3.new Boeing737(125,300,314);
-               Airlines a4=new Airlines();
-               Airlines.Tu144 plane4=a4.new Tu144(150,290,2121);
-               Airlines a5=new Airlines();
-               Airlines.ANT2 plane5=a5.new ANT2(15,100,404);
+               Airlines a=new Airlines();
+               Airlines.AirBus330 plane1=a.new AirBus330(100,350,123);
+               Airlines.AirBus330 plane2=a.new AirBus330(120,340,244);
+               Airlines.Boeing737 plane3=a.new Boeing737(125,300,314);
+               Airlines.Tu144 plane4=a.new Tu144(150,290,2121);
+               Airlines.ANT2 plane5=a.new ANT2(15,100,404);
                ArrayList <Airlines> sysaninTransports=new ArrayList <Airlines>();
                sysaninTransports.add(plane1);
                sysaninTransports.add(plane2);

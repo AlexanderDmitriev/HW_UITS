@@ -71,18 +71,13 @@ public class Stones implements Comparable <Stones> {
         }
        
        public static void main(String args[]){
-           Stones s1=new Stones();
-           Stones.Diamond st1=s1.new Diamond(3,32);
-           Stones s2=new Stones();
-           Stones.Diamond st2=s2.new Diamond(5,120);
-           Stones s3=new Stones();
-           Stones.Ruby st3=s3.new Ruby(5,100);
-           Stones s4=new Stones();
-           Stones.Sapphire st4=s4.new Sapphire(6,140);
-           Stones s5=new Stones();
-           Stones.Emerald st5=s5.new Emerald(7,155);
-           Stones s6=new Stones();
-           Stones.Emerald st6=s6.new Emerald(120,3000);
+           Stones s=new Stones();
+           Stones.Diamond st1=s.new Diamond(3,32);
+           Stones.Diamond st2=s.new Diamond(5,120);
+           Stones.Ruby st3=s.new Ruby(5,100);
+           Stones.Sapphire st4=s.new Sapphire(6,140);
+           Stones.Emerald st5=s.new Emerald(7,155);
+           Stones.Emerald st6=s.new Emerald(120,3000);
            ArrayList <Stones> necklace=new ArrayList <Stones>();
            necklace.add(st1);
            necklace.add(st2);

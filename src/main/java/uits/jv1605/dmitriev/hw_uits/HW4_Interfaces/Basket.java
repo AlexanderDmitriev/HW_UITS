@@ -22,25 +22,8 @@ import uits.jv1605.dmitriev.hw_uits.HW4_Interfaces.Plant;
 
 /** @author 911 */
 public class Basket {
-    transient Object[] elementData; // non-private to simplify nested class access
-    private int size;
-    private static final Object[] EMPTY_ELEMENTDATA = {};
     
-   /* public void put(Collection<? extends Plant> c, Plant e) {
-        elementData = c.toArray();
-        if ((size = elementData.length) != 0) {
-            // c.toArray might (incorrectly) not return Object[] (see 6260652)
-            if (elementData.getClass() != Object[].class)
-                elementData = Arrays.copyOf(elementData, size, Object[].class);
-        } else {
-            // replace with empty array.
-            this.elementData = EMPTY_ELEMENTDATA;
-        }
-        //ensureCapacityInternal(size + 1);  // Increments modCount!!
-        elementData[size++] = e;
-    }*/
-    
-    public void put(Collection <Plant> c, Plant e){
+    public static void put(Collection <Plant> c, Plant e){
         c.add(e);
     }
     public void put(Collection <Plant> c, Collection <Plant> e){
@@ -66,8 +49,6 @@ public class Basket {
     
     public Plant [] extractAllFruit(ArrayList <Plant> c){
         Plant tempArray[]=new Plant[c.size()];
-        //tempArray = c.toArray(new Plant [c.size()]);
-        //Fruit x=new Fruit();
         int i=0;
         for(Plant iterator : c){
             if(iterator instanceof Fruit){ // iterator instanceof Fruit  вернет true, если iterator принадлежит классу Fruit
@@ -79,11 +60,8 @@ public class Basket {
     
     public Plant [] extractAllVegetables(ArrayList <Plant> c){
         Plant tempArray[]=new Plant[c.size()];
-        //tempArray = c.toArray(new Plant [c.size()]);
-        //Vegetable x=new Vegetable();
         int i=0;
         for(Plant iterator : c){
-            //if(iterator.getClass().getName().equals(x.getClass().getName())){
                 if(iterator instanceof Vegetable){
                   tempArray[i]=iterator;
                   i++;}
@@ -93,7 +71,7 @@ public class Basket {
         
     
     
-    public double getWeigth(Collection <Plant> c){
+    public static double getWeigth(Collection <Plant> c){
         double sum=0;
         for(Plant iterator : c){
              sum+=iterator.weigth;
@@ -101,10 +79,25 @@ public class Basket {
         return sum;
     }
     
+    public static Collection <Plant> fillTheBasket(Collection <Plant> list,Collection <Plant> e){ //Метод, наполняющий корзину
+        for(Plant iterator : e){
+            if (!iterator.condition){throw new IllegalArgumentException(" Вы загрузили некачественный продукт");}
+            put(list,iterator);
+            System.out.println("Корзина на данный момент весит "  + getWeigth(list) );
+            }
+        return list;
+    }
+    public static Collection <Plant> fillTheBasket(Collection <Plant> list, Plant e){ //Метод, наполняющий корзину
+            if (!e.condition){throw new IllegalArgumentException(" Вы загрузили некачественный продукт");}
+            put(list,e);
+            System.out.println("Корзина на данный момент весит "  + getWeigth(list) );
+            return list;
+        }
+    
+    
 
 
     public static void main(String args[]){
-        Fruit x=new Fruit();
-        x.getClass();
+
     }
 }

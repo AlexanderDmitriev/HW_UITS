@@ -17,7 +17,7 @@ import java.lang.Exception;
 
 /**@author 911 */
 public interface Peeller {
-    double peellItem(Plant obj);
+    double  peellItem(Plant obj);
     double peellItems(Collection <Plant> c);
 }
 
@@ -34,10 +34,8 @@ interface Slicer{
 class KitchenMachine extends Basket implements Peeller, Cutter, Slicer {
 
     @Override
-    public double peellItem(Plant obj) {
-         if (!obj.peelling){throw new IllegalArgumentException(" Вы загрузили неочищенный продукт");}
+    public  double peellItem(Plant obj) {
          obj.peel();
-            //catch(IllegalArgumentException e){System.out.println("IllegalArgumentException");}
             return obj.weigth;
     }
 
@@ -66,6 +64,7 @@ class KitchenMachine extends Basket implements Peeller, Cutter, Slicer {
             if(c instanceof Vegetable){
                 if (!iterator.peelling){throw new IllegalArgumentException(" Вы загрузили неочищенный продукт");}
                 sumWeigth=(sumWeigth-iterator.weigth)+iterator.weigth*0.98;
+                iterator.weigth=iterator.weigth*0.98;
         }}
         return sumWeigth;
     }
@@ -82,8 +81,10 @@ class KitchenMachine extends Basket implements Peeller, Cutter, Slicer {
         for(Plant iterator : c){
              if (!iterator.peelling){throw new IllegalArgumentException(" Вы загрузили неочищенный продукт");}
              sumWeigth+=iterator.weigth*0.98;
+             iterator.weigth=iterator.weigth*0.98;
         }
        return sumWeigth; 
     }
+    
     
 }

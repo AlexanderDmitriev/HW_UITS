@@ -84,24 +84,16 @@ public class NewYearsPresent implements Comparable <NewYearsPresent>{
             this.type="JellySweets";}
         }
 public static void main(String args[]){
-        NewYearsPresent c1=new NewYearsPresent(5,10,1);
-        NewYearsPresent.Caramel can1=c1.new Caramel(5,10,1);
-        NewYearsPresent c2=new NewYearsPresent(5,10,2);
-        NewYearsPresent.Iris can2=c2.new Iris(5,10,2);
-        NewYearsPresent c3=new NewYearsPresent(5,10,3);
-        NewYearsPresent.Iris can3=c3.new Iris(5,10,3);
-        NewYearsPresent c4=new NewYearsPresent(5,12,5);
-        NewYearsPresent.ChocolateCandy can4=c4.new ChocolateCandy(5,12,5);
-        NewYearsPresent c5=new NewYearsPresent(5,15,1);
-        NewYearsPresent.ChocolateCandy can5=c5.new ChocolateCandy(5,15,5);
-        NewYearsPresent c6=new NewYearsPresent(5,15,4);
-        NewYearsPresent.Tryffle can6=c6.new Tryffle(5,15,4);
-        NewYearsPresent c7=new NewYearsPresent(4,5,4);
-        NewYearsPresent.CandyBar can7=c7.new CandyBar(4,5,4);
-        NewYearsPresent c8=new NewYearsPresent(4,15,2);
-        NewYearsPresent.SugarCandy can8=c8.new SugarCandy(4,15,2);
-        NewYearsPresent c9=new NewYearsPresent(25,0,364);
-        NewYearsPresent.JellySweets can9=c9.new JellySweets(25,5,1);
+        NewYearsPresent c=new NewYearsPresent();
+        NewYearsPresent.Caramel can1=c.new Caramel(5,10,1);
+        NewYearsPresent.Iris can2=c.new Iris(5,10,2);
+        NewYearsPresent.Iris can3=c.new Iris(5,10,3);
+        NewYearsPresent.ChocolateCandy can4=c.new ChocolateCandy(5,12,5);
+        NewYearsPresent.ChocolateCandy can5=c.new ChocolateCandy(5,15,5);
+        NewYearsPresent.Tryffle can6=c.new Tryffle(5,15,4);
+        NewYearsPresent.CandyBar can7=c.new CandyBar(4,5,4);
+        NewYearsPresent.SugarCandy can8=c.new SugarCandy(4,15,2);
+        NewYearsPresent.JellySweets can9=c.new JellySweets(25,5,1);
         ArrayList <NewYearsPresent> present=new ArrayList <NewYearsPresent>();
           present.add(can1);
           present.add(can2);

@@ -62,20 +62,14 @@ public class Vegetables implements Comparable <Vegetables>{
         }
        
        public static void main(String args[]){
-           Vegetables v1=new Vegetables();
-           Vegetables.Cucumber veg1=v1.new Cucumber(1,0);
-           Vegetables v2=new Vegetables();
-           Vegetables.Cucumber veg2=v2.new Cucumber(1,1);
-           Vegetables v3=new Vegetables();
-           Vegetables.Tomato veg3=v3.new Tomato(2,0);
-           Vegetables v4=new Vegetables();
-           Vegetables.Tomato veg4=v4.new Tomato(3,1);
-           Vegetables v5=new Vegetables();
-           Vegetables.Pepper veg5=v5.new Pepper(2,3);
-           Vegetables v6=new Vegetables();
-           Vegetables.Onion veg6=v6.new Onion(4,3);
-           Vegetables v7=new Vegetables();
-           Vegetables.Dill veg7=v7.new Dill(2,0);
+           Vegetables v=new Vegetables();
+           Vegetables.Cucumber veg1=v.new Cucumber(1,0);
+           Vegetables.Cucumber veg2=v.new Cucumber(1,1);
+           Vegetables.Tomato veg3=v.new Tomato(2,0);
+           Vegetables.Tomato veg4=v.new Tomato(3,1);
+           Vegetables.Pepper veg5=v.new Pepper(2,3);
+           Vegetables.Onion veg6=v.new Onion(4,3);
+           Vegetables.Dill veg7=v.new Dill(2,0);
            ArrayList <Vegetables> salad=new ArrayList <Vegetables>();
            salad.add(veg1);
            salad.add(veg2);

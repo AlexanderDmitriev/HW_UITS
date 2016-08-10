@@ -54,18 +54,13 @@ public class ElectricDevices implements Comparable <ElectricDevices>{
             this.type="Обогреватель";}
         }
     public static void main(String args[]){
-        ElectricDevices e1=new ElectricDevices();
-        ElectricDevices.Kettle el1=e1.new Kettle(1);
-        ElectricDevices e2=new ElectricDevices();
-        ElectricDevices.SlowCooker el2=e2.new SlowCooker(1.5);
-        ElectricDevices e3=new ElectricDevices();
-        ElectricDevices.MicroWave el3=e3.new MicroWave(3);
-        ElectricDevices e4=new ElectricDevices();
-        ElectricDevices.RectalInhaler el4=e4.new RectalInhaler(5);
-        ElectricDevices e5=new ElectricDevices();
-        ElectricDevices.RectalInhaler el5=e5.new RectalInhaler(2);
-        ElectricDevices e6=new ElectricDevices();
-        ElectricDevices.Heater el6=e6.new Heater(3);
+        ElectricDevices e=new ElectricDevices();
+        ElectricDevices.Kettle el1=e.new Kettle(1);
+        ElectricDevices.SlowCooker el2=e.new SlowCooker(1.5);
+        ElectricDevices.MicroWave el3=e.new MicroWave(3);
+        ElectricDevices.RectalInhaler el4=e.new RectalInhaler(5);
+        ElectricDevices.RectalInhaler el5=e.new RectalInhaler(2);
+        ElectricDevices.Heater el6=e.new Heater(3);
         ArrayList <ElectricDevices> devices=new ArrayList <ElectricDevices>();
         devices.add(el1);
         devices.add(el2);

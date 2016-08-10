@@ -17,6 +17,8 @@ public class Flower implements Comparable <Flower> {
         boolean trappings; // Украшения
         String type;
         
+     Flower(){}
+        
      Flower(int length, int price, int recency, boolean trappings){
             lengthFlower=length;    // Длина ножки
             priceFlower=price;
@@ -65,24 +67,16 @@ public class Flower implements Comparable <Flower> {
         }
     
     public static void main(String args[]){
-        Flower ff1=new Flower(5,10,1,true);
-        Flower.RedRose f1=ff1.new RedRose(5,10,1,true);
-        Flower ff2=new Flower(5,10,2,true);
-        Flower.RedRose f2=ff2.new RedRose(5,10,2,true);
-        Flower ff3=new Flower(5,10,0,true);
-        Flower.RedRose f3=ff3.new RedRose(5,10,0,true);
-        Flower ff4=new Flower(5,12,1,true);
-        Flower.PinkRose f4=ff4.new PinkRose(5,12,1,true);
-        Flower ff5=new Flower(5,15,1,true);
-        Flower.WhiteRose f5=ff5.new WhiteRose(5,15,1,true);
-        Flower ff6=new Flower(5,15,0,true);
-        Flower.WhiteRose f6=ff6.new WhiteRose(5,15,0,true);
-        Flower ff7=new Flower(4,5,0, false);
-        Flower.Tulip f7=ff7.new Tulip(4,5,0, false);
-        Flower ff8=new Flower(4,15,2, false);
-        Flower.Chrysantemum f8=ff8.new Chrysantemum(4,15,2, false);
-        Flower ff9=new Flower(25,0,364, false);
-        Flower.PotatoMine f9=ff9.new PotatoMine(25,0,364, false);
+        Flower ff=new Flower();
+        Flower.RedRose f1=ff.new RedRose(5,10,1,true);
+        Flower.RedRose f2=ff.new RedRose(5,10,2,true);
+        Flower.RedRose f3=ff.new RedRose(5,10,0,true);
+        Flower.PinkRose f4=ff.new PinkRose(5,12,1,true);
+        Flower.WhiteRose f5=ff.new WhiteRose(5,15,1,true);
+        Flower.WhiteRose f6=ff.new WhiteRose(5,15,0,true);
+        Flower.Tulip f7=ff.new Tulip(4,5,0, false);
+        Flower.Chrysantemum f8=ff.new Chrysantemum(4,15,2, false);
+        Flower.PotatoMine f9=ff.new PotatoMine(25,0,364, false);
         // Создали цветы-объекты, которые будем упаковывать в букет
           ArrayList <Flower> bunch=new ArrayList <Flower>();
           bunch.add(f1);

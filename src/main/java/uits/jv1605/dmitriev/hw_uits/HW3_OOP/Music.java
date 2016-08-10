@@ -64,18 +64,13 @@ public class Music implements Comparable <Music> {
         }
        
        public static void main(String args[]){
-           Music m1=new Music();
-           Music.CoB track1=m1.new CoB("Are you dead yet?",200,"death metall",3.7);
-           Music m2=new Music();
-           Music.CoB track2=m2.new CoB("Sixpounder",240,"death metall",4.2);
-           Music m3=new Music();
-           Music.Metallica track3=m3.new Metallica("Enter sandman",400,"trash metall",4.4);
-           Music m4=new Music();
-           Music.Dethklok track4=m4.new Dethklok("Hatercopter",200,"trash metall",4.5);
-           Music m5=new Music();
-           Music.CoB track5=m5.new CoB("In your face",300,"death metall",3.7);
-           Music m6=new Music();
-           Music.Metallica track6=m6.new Metallica("Unforgiven",200,"ballad",3.7);
+           Music m=new Music();
+           Music.CoB track1=m.new CoB("Are you dead yet?",200,"death metall",3.7);
+           Music.CoB track2=m.new CoB("Sixpounder",240,"death metall",4.2);
+           Music.Metallica track3=m.new Metallica("Enter sandman",400,"trash metall",4.4);
+           Music.Dethklok track4=m.new Dethklok("Hatercopter",200,"trash metall",4.5);
+           Music.CoB track5=m.new CoB("In your face",300,"death metall",3.7);
+           Music.Metallica track6=m.new Metallica("Unforgiven",200,"ballad",3.7);
            ArrayList <Music> disk=new ArrayList <Music>();
            disk.add(track1);
            disk.add(track2);
