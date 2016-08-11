@@ -12,9 +12,12 @@ package uits.jv1605.dmitriev.hw_uits.HW4_Interfaces;
  */
 public class Apple extends Fruit{
     
+    
     Apple(double weigth, String color, boolean ripeness, boolean condition, boolean peelling) {
         super(weigth, color, ripeness, condition, peelling);
         String type="Яблоко";
     }
+
+    
 
 }

@@ -43,9 +43,9 @@ class KitchenMachine extends Basket implements Peeller, Cutter, Slicer {
     public double peellItems(Collection<Plant> c) {
         double sumWeigth=0;
         try{for(Plant iterator : c){
-            if (!iterator.peelling){throw new IllegalArgumentException(" Вы загрузили неочищенный продукт");}
+            if (!iterator.peelling){
              iterator.peel();
-             sumWeigth+=iterator.weigth;}
+             sumWeigth+=iterator.weigth;}}
         } catch(IllegalArgumentException e){System.out.println("IllegalArgumentException");}
         return sumWeigth;
     }
