@@ -10,13 +10,14 @@ import javax.swing.*;
 import uits.jv1605.dmitriev.hw_uits.HW4_Interfaces.Kitchen.*;
 /** @author 911 */
 public class InputInterface {
+    static boolean  cont=false;
     public static Plant creation(String classType){
         boolean ripeness;
         boolean condition;
         boolean peelling;
-        boolean cont=false;
+        
         Plant obj;
-            do{
+                 
                     String temp=JOptionPane.showInputDialog("Сколько весит объект?");
                     double weigth=Integer.parseInt(temp);
                     String color=JOptionPane.showInputDialog("Какого он цвета?");
@@ -54,9 +55,8 @@ public class InputInterface {
                             JOptionPane.showMessageDialog(null, "Неверный тип данных");
                             obj=null;
                             cont=true;}
-                         temp=JOptionPane.showInputDialog("Продолжить?");
-                        if(temp.equalsIgnoreCase("no")){ cont=true;}
-            } while(!cont);
+                         
+            
             
                         return obj;
     }
@@ -70,14 +70,17 @@ public class InputInterface {
                 "6.Cut - нарезка овощей" + "\n" + "7.Trash - сколько ушло в мусор" + "\n" + 
                 "8.Weigth - узнать текущий вес корзины");
         if(x.equalsIgnoreCase("Create")){
-            String classType=JOptionPane.showInputDialog("Объект какого класса вы хотите создать?"); 
+            do{
+                String classType=JOptionPane.showInputDialog("Объект какого класса вы хотите создать?");
                 pl.add(creation(classType));
-                
+                String temp=JOptionPane.showInputDialog("Продолжить?"); //Не доходит до этой строчки
+                        if(temp.equalsIgnoreCase("no")){ cont=true;}
+                } while(!cont);
         }
         
         if(x.equalsIgnoreCase("Add")){
             String addition=JOptionPane.showInputDialog("Какой элемент хотите добавить?");
-
+            
         }
         
         if(x.equalsIgnoreCase("Extract")){
